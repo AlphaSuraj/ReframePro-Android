@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.example.reframepro"
+        minSdkVersion 24
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release { minifyEnabled false }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+
+    // ML Kit Face Detection (on-device)
+    implementation 'com.google.mlkit:face-detection:16.1.5'
+
+    // FFmpegKit - if not using local AAR, you can add through Maven (if building online):
+    // implementation 'com.arthenica:ffmpeg-kit-full:4.5.LTS'
+
+    // Vosk Android (you may put its AAR in libs)
+    // implementation files('libs/vosk-android-*.aar')
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core-ktx:1.9.0'
+}
