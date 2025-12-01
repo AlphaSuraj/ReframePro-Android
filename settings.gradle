@@ -1,0 +1,2 @@
+rootProject.name = "ReframePro"
+include ':app'
